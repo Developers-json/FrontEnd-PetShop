@@ -1,3 +1,4 @@
+import { animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./error.component.css']
 })
 export class ErrorComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {
+    
   }
-
+  
 }
