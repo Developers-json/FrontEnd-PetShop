@@ -9,19 +9,22 @@ import { HomeComponent } from './template/home/home.component';
 import { ErrorComponent } from './template/error/error.component';
 import {HttpClientModule} from '@angular/common/http';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

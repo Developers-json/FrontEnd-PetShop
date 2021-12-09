@@ -1,5 +1,8 @@
-.body{
-  height: 90%;
+.section-loggin{
+  height: 700px;
+}
+.body{  
+  height: 100%;
   display: flex;
   align-items: center;
 }

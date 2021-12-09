@@ -10,6 +10,7 @@ import { ProductCreationComponent } from './product/product-creation/product-cre
 import { ProductEditionComponent } from './product/product-edition/product-edition.component';
 import { ProductEliminationComponent } from './product/product-elimination/product-elimination.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import { ProductListComponent } from './product/product-list/product-list.compon
   ],
   imports: [
     CommonModule,
-    AdmiRoutingModule
+    AdmiRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdmiModule { }

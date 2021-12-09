@@ -17,8 +17,12 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.subs = this.securityService.obtenerDatosUsuarioEnSesion().subscribe((datos:LoginModel) => {
-      if(datos.isIdentify)
-      this.isLogin = datos.isIdentify
+      if(this.securityService.isLoggin() != false){
+        //console.log(this.securityService.isLoggin() )
+        this.isLogin = true
+      }else{
+        this.isLogin = false
+      }
     })
   }
 

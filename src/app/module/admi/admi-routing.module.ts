@@ -31,11 +31,11 @@ const routes: Routes = [
     component: ProductCreationComponent
   },
   {
-    path:"editar-producto",
+    path:"editar-producto/:id",
     component: ProductEditionComponent
   },
   {
-    path:"elimination-producto",
+    path:"elimination-producto/:id",
     component: ProductEliminationComponent
   },
   {

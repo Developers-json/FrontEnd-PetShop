@@ -1,1 +1,34 @@
-<p>product-list works!</p>
+<div class="section-loggin">
+  <div *ngIf="isLogin" class="position-relative top-0 m-2 m-sm-4 ">
+    <button routerLink="/admi/crear-producto" class="btn btn-warning">Crear producto</button>
+  </div>
+  <div class="mx-4">
+    <table class="table table-striped table-hover align-content-center text-center">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Imagen</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody class="align-middle">
+        <tr *ngFor="let p of listadoProductos">
+          <td><img src="{{p.Imagen}}" alt="producto" width="150px"></td>
+          <td>{{p.Nombre}}</td>
+          <td>$ {{p.Precio}}</td>         
+          <td>
+            <div *ngIf="isLogin" class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <button class="btn btn-warning " routerLink="/admi/editar-producto/{{p.id}}">Editar</button>
+              <button class="btn btn-info " routerLink="">Comprar</button>
+              <button class="btn btn-danger " routerLink="/admi/elimination-producto/{{p.id}}">Elimiar</button>
+            </div>
+            <div *ngIf="!isLogin" class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <button class="btn btn-info " routerLink="/security/login">Comprar</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
