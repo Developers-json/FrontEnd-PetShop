@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidatorSesionGuard } from 'src/app/guardians/validator-sesion.guard';
 import { ProductCreationComponent } from './product/product-creation/product-creation.component';
 import { ProductEditionComponent } from './product/product-edition/product-edition.component';
 import { ProductEliminationComponent } from './product/product-elimination/product-elimination.component';
@@ -16,11 +17,13 @@ const routes: Routes = [
   },
   {
     path:"editar-persona",
-    component: UserEditionComponent
+    component: UserEditionComponent,
+    canActivate: [ValidatorSesionGuard]
   },
   {
     path:"elimination-persona",
-    component: UserEliminationComponent
+    component: UserEliminationComponent,
+    canActivate: [ValidatorSesionGuard]
   },
   {
     path:"list-persona",
@@ -32,11 +35,13 @@ const routes: Routes = [
   },
   {
     path:"editar-producto/:id",
-    component: ProductEditionComponent
+    component: ProductEditionComponent,
+    canActivate: [ValidatorSesionGuard]
   },
   {
     path:"elimination-producto/:id",
-    component: ProductEliminationComponent
+    component: ProductEliminationComponent,
+    canActivate: [ValidatorSesionGuard]
   },
   {
     path:"list-producto",

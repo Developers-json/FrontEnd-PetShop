@@ -1,7 +1,8 @@
 .section-loggin{
     margin-top: 200px;
     margin-bottom: 100px;
-    height: 360px;
+    min-height: 360px;
+    max-height: 100%;
 }
 .btn{
     margin-right: 10px;
