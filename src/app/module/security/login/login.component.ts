@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import * as CryptoJS from "crypto-js";
 import { SecurityService } from 'src/app/services/security.service';
 
-
+ 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -43,15 +43,5 @@ export class LoginComponent implements OnInit {
     if(alertPlaceholder)
     alertPlaceholder.append(wrapper)
     
-  }
-
-  navfooter(){
-    const navb = document.getElementById('navbarid')
-    if(navb)
-    navb.style.visibility 
-
-    const footer = document.getElementById('footerid')
-    if(footer)
-    footer.style.visibility 
   }
 }

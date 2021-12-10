@@ -29,9 +29,9 @@
           </div>
         </div>
 
-        <div class="checkbox text-start mb-3">
+        <div class="checkbox text-start mb-3"> 
           <label>
-            <input type="checkbox" value="remember-me" data-np-checked="1"> Remember me
+            <button routerLink="/security/reset-password" type="button" class="btn btn-sm btn-outline-dark me-2" style="border: none;">Recuperar contraseña</button>
           </label>
         </div>
         <button [disabled]="!fgValidador.valid" class="w-100 btn btn-lg btn-warning" type="submit">Sign in</button>

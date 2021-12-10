@@ -1,6 +1,8 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { DatosCodigo } from '../models/datosCodigo.model';
+import { DatosContra } from '../models/datosContra.model';
 import { LoginModel } from '../models/login.model';
 
 @Injectable({
@@ -70,6 +72,36 @@ export class SecurityService {
       return token
     }
     return false
+  }
+
+
+  //RECUPEREAR CONTRASEÑA
+  recuperarContrseña(codigo: string, usuario: string, clave: string): Observable<DatosContra>{
+    return this.http.post<DatosContra>(
+      `${this.url}recuperar-clave`,
+      {
+        //id: id,
+        correo: usuario,
+        password: clave,
+        codigo: codigo
+      },
+      {
+        headers: new HttpHeaders({})
+      }
+    )
+  }
+
+  codigoRecuperacion(usuario:string): Observable<DatosCodigo>{
+    return this.http.post<DatosCodigo>(
+      `${this.url}cambio-clave`,
+      {
+        //id: id,
+        correo: usuario
+      },
+      {
+        headers: new HttpHeaders({})
+      }
+    )
   }
   
 }
