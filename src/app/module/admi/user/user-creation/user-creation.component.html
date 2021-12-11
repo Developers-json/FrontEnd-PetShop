@@ -4,7 +4,7 @@
       <button routerLink="/home" class="btn btn-warning">Home</button>
     </div>
     <div class="form-signin">
-      <form class="needs-validation">
+      <form [formGroup]="fgValidador" (ngSubmit)="getDataForm()">
         <svg xmlns="http://www.w3.org/2000/svg" width="72" height="57" fill="currentColor" class="bi bi-bootstrap-fill"
           viewBox="0 0 16 16" style="color:black;">
           <path
@@ -15,14 +15,15 @@
         <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
 
         <div class="form-floating">
-          <input type="text" class="form-control" id="nombreCompletoInput" placeholder="Andres Felipe" required>
+          <input formControlName="nombre" type="text" class="form-control" id="nombreCompletoInput" placeholder="Andres Felipe" required>
           <label for="nombreCompletoInput">Nombres</label>
           <div class="invalid-feedback">
             Por favor, coloque su nombre completo
           </div>
         </div>
+
         <div class="form-floating">
-          <input type="text" class="form-control" id="apellidosCompletoInput" placeholder="Perez Gomez" required>
+          <input formControlName="apellido" type="text" class="form-control" id="apellidosCompletoInput" placeholder="Perez Gomez" required>
           <label for="apellidosCompletoInput">Apellidos</label>
           <div class="invalid-feedback">
             Por favor, coloque sus apellidos completos
@@ -30,7 +31,7 @@
         </div>
 
         <div class="form-floating">
-          <input type="text" class="form-control" id="telefonoInput" placeholder="+673052478165" required>
+          <input formControlName="celular" type="text" class="form-control" id="telefonoInput" placeholder="+673052478165" required>
           <label for="telefonoInput">Telefono</label>
           <div class="invalid-feedback">
             Por favor, coloque numero telefonico valido
@@ -38,14 +39,14 @@
         </div>
 
         <div class="form-floating">
-          <input type="email" class="form-control" id="correoInput" placeholder="name@example.com" required>
+          <input formControlName="usuario" type="email" class="form-control" id="correoInput" placeholder="name@example.com" required>
           <label for="correoInput">Email address</label>
           <div class="invalid-feedback">
             Por favor, coloque un correo valido
           </div>
         </div>
         <div class="form-floating mb-4">
-          <input type="password" class="form-control" id="contraInput" placeholder="Password" required>
+          <input formControlName="clave" type="password" class="form-control" id="contraInput" placeholder="Password" required>
           <label for="contraInput">Password</label>
           <div class="invalid-feedback">
             Por favor, coloque una contraseña valida
@@ -53,7 +54,7 @@
         </div>
 
         <div class="checkbox">
-          <button class="w-100 btn btn-lg btn-warning" type="submit">Sign up</button>
+          <button [disabled]="!fgValidador.valid" class="w-100 btn btn-lg btn-warning" type="submit">Sign up</button>
         </div>
       </form>
     </div>

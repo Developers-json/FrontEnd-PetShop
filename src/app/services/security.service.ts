@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { DatosCodigo } from '../models/datosCodigo.model';
 import { DatosContra } from '../models/datosContra.model';
 import { LoginModel } from '../models/login.model';
+import { UserCreateModel } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -101,6 +102,24 @@ export class SecurityService {
       {
         headers: new HttpHeaders({})
       }
+    )
+  }
+
+  //CREAR USUARIO
+  singUp(nombre: string, apellido:string, correo:string, celular:string, clave:string, codigo:string ): Observable<UserCreateModel>{
+    return this.http.post<UserCreateModel>(
+      `${this.url}personas`,{
+        Nombre: nombre,
+        Apellido: apellido,
+        Correo: correo,
+        Celular: celular,
+        Clave: clave,
+        Codigo: " " 
+          },
+      {
+        headers: new HttpHeaders({})
+      }
+
     )
   }
   
